@@ -410,10 +410,11 @@ ul li {
 	position: absolute;
 	top: 120px;
 	left: 0;
-	min-width: 150px;
+	width: 260px;
 	background-color: #d45a57;
 	-webkit-transition: 0.4s ease-in-out;
 	transition: 0.4s ease-in-out;
+	overflow: hidden;
 }
 
 .orb-menu-frame nav .orb-menu li.orb-has-children ul li {
