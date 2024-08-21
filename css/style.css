@@ -952,7 +952,7 @@ ul li {
 
 .orb-photo-frame.orb-active .orb-slideshow, .orb-photo-frame.orb-active img {
   transform: translateX(0);
-  transition-delay: 0.7s;
+  transition-delay: 0.4s;
 }
 
 .orb-photo-frame.orb-active:after {
@@ -4476,7 +4476,7 @@ label.cbx {
 }
 
 .orb-blog-1 .orb-photo-frame:after {
-  background-color: #818C89;
+  display: none;
 }
 
 .orb-blog-1 .orb-top-bar-frame {

@@ -1153,8 +1153,8 @@ ul li {
 .orb-photo-frame.orb-active .orb-slideshow, .orb-photo-frame.orb-active img {
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
-	-webkit-transition-delay: 0.7s;
-	transition-delay: 0.7s;
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
 }
 
 .orb-photo-frame.orb-active:after {
@@ -5374,7 +5374,7 @@ label.cbx {
 }
 
 .orb-blog-1 .orb-photo-frame:after {
-	background-color: #818C89;
+	display: none;
 }
 
 .orb-blog-1 .orb-top-bar-frame {
