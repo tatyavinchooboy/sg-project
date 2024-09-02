@@ -298,6 +298,12 @@ ul li {
     width: 123px;
   }
 }
+/* fancybox
+==================================== */
+.fancybox-slide--video .fancybox-content {
+  max-height: 100%;
+}
+
 /* Menu
 ==================================== */
 .orb-menu-frame {
@@ -343,10 +349,14 @@ ul li {
   position: absolute;
   top: 120px;
   left: 0;
-  width: 260px;
+  width: 180px;
   background-color: #d45a57;
   transition: 0.4s ease-in-out;
   overflow: hidden;
+}
+
+.orb-menu-frame nav .orb-menu li.orb-has-children.big-child-menu ul {
+  width: 260px;
 }
 
 .orb-menu-frame nav .orb-menu li.orb-has-children ul li {
@@ -388,7 +398,7 @@ ul li {
 }
 
 .orb-menu-frame nav .orb-menu li.orb-current > a > span {
-  z-index: 2;
+  z-index: 1;
   position: relative;
 }
 
@@ -401,6 +411,8 @@ ul li {
   position: absolute;
   z-index: 1;
   transform: rotate(-30deg) translateX(-50%);
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 .orb-menu-frame nav .orb-menu li.orb-current > a:hover {
@@ -539,6 +551,14 @@ ul li {
 }
 
 @media (max-width: 992px) {
+  .orb-menu-frame nav .orb-menu li.orb-current > a:after, .orb-menu-frame.orb-fs-menu nav .orb-menu li.orb-current > a:after {
+    transform: none;
+    opacity: 1;
+    left: auto;
+  }
+  .orb-menu-frame nav .orb-menu li.orb-has-children .no-link {
+    position: relative;
+  }
   .orb-menu-frame {
     display: none;
   }
@@ -694,7 +714,7 @@ ul li {
 }
 
 .height-with-scroll {
-  max-height: calc(var(--vh, 1vh) * 100 - 320px);
+  max-height: calc(var(--vh, 1vh) * 100 - 350px);
   overflow: auto;
   margin-bottom: 20px;
 }
@@ -1613,7 +1633,7 @@ label.cbx {
 
 .orb-home-2 .orb-content .orb-slide-caption .orb-main-title .h1, .orb-home-2 .orb-content .orb-slide-caption .orb-main-title h1 {
   margin-left: 10%;
-  font-size: 80px;
+  font-size: 65px;
   color: #FFF;
   text-transform: uppercase;
 }
@@ -3763,10 +3783,10 @@ label.cbx {
   .orb-big-menu-1 .rb-object-frame .orb-descr {
     display: none;
   }
-  .orb-big-menu-1 .orb-menu-frame nav .orb-menu li.orb-has-children::after {
+  .orb-big-menu-1 .orb-menu-frame nav .orb-menu li.orb-has-children .no-link::after {
     content: url(../img/ui/down.png);
     position: absolute;
-    right: 20px;
+    right: -30px;
     top: 0px;
     width: 24px;
     height: 24px;
@@ -4535,38 +4555,9 @@ label.cbx {
   padding-left: 120px;
 }
 
-.orb-blog-1 .orb-content .orb-blog-frame .orb-all-posts {
-  position: absolute;
-  top: 30px;
-  right: 0;
-}
-
-.orb-blog-1 .orb-content .orb-blog-frame .orb-all-posts .orb-all-btn {
-  color: #46302c;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  font-family: "Californian", serif;
-  background-color: transparent;
-  border: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.orb-blog-1 .orb-content .orb-blog-frame .orb-all-posts .orb-all-btn .orb-arrow {
-  margin-right: 20px;
-  transition: 0.4s ease-in-out;
-  transform: rotate(180deg);
-}
-
-.orb-blog-1 .orb-content .orb-blog-frame .orb-all-posts .orb-all-btn:hover .orb-arrow {
-  transform: rotate(180deg) translateX(10px);
-}
-
 .orb-blog-1 .orb-content .orb-blog-frame .orb-blog-title {
   border-bottom: solid 1px #46302c;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   margin-bottom: 40px;
 }
 
@@ -4574,12 +4565,13 @@ label.cbx {
   color: #46302c;
   font-size: 40px;
   text-transform: capitalize;
+  text-align: right;
 }
 
 .orb-blog-1 .orb-content .orb-blog-frame .orb-post-card {
   display: block;
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
@@ -4587,15 +4579,32 @@ label.cbx {
   color: #796864;
   font-size: 10px;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  letter-spacing: 0.3em;
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
   white-space: nowrap;
 }
 
-.orb-blog-1 .orb-content .orb-blog-frame .orb-post-card h2 {
-  font-size: 18px;
-  color: #46302c;
+.orb-blog-1 .orb-content .orb-blog-frame .orb-post-card h3 {
+  font-size: 15px;
+  color: #d45a57;
   margin-right: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame .orb-post-card h3::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 4px;
+  height: 6px;
+  width: 6px;
+  background-color: #d45a57;
+  border-radius: 50%;
+}
+.orb-blog-1 .orb-content .orb-blog-frame .orb-post-card h3 span {
+  color: #46302c;
+  font-size: 13px;
+  font-weight: 100;
 }
 
 .orb-blog-1 .orb-content .orb-blog-frame .orb-post-card:after {
@@ -4662,11 +4671,46 @@ label.cbx {
 }
 /* content page
 ==================================== */
-.content-wrapper .orb-post-card {
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper {
+  padding-top: 20px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .orb-post-card {
   margin-right: 20px;
 }
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .section-wrapper {
+  margin-bottom: 30px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .content-head {
+  color: #46302c;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .content-head .heading {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .content-head .sub-heading {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  font-family: "Futura", sans-serif;
+  margin: 0 0 40px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .orb-post-footer {
+  text-align: right;
+  padding-top: 30px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .orb-post-footer a {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #46302c;
+  text-decoration: none;
+  font-size: 14px;
+}
+.orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .orb-post-footer img {
+  margin-left: 10px;
+  transform: rotate(-45deg);
+}
 
-/* Blog 2
+/* Blog 2p
 ==================================== */
 .orb-blog-2 {
   padding: 120px 80px 80px;
@@ -4993,6 +5037,7 @@ label.cbx {
 
 .orb-blog-card .orb-post-text h2 {
   font-family: "Californian";
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
   overflow: hidden;
@@ -5043,9 +5088,10 @@ label.cbx {
 }
 
 .orb-banner h1 {
-  font-size: 64px;
+  font-size: 55px;
   color: #46302c;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .orb-banner svg {
@@ -5060,6 +5106,7 @@ label.cbx {
   font-family: "Futura", sans-serif;
   font-size: 16px;
   color: #796864;
+  font-style: italic;
 }
 
 @media (max-width: 992px) {
@@ -5082,7 +5129,7 @@ label.cbx {
     margin-bottom: 20px;
   }
   .orb-blog-card .orb-post-text h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
   .orb-banner p {
     font-size: 12px;
@@ -5585,8 +5632,8 @@ label.cbx {
 }
 
 .orb-about-2 .orb-content .contact-details-wrapper {
-  margin-top: 100px;
-  padding: 10px 10px 10px 80px;
+  margin-top: 70px;
+  padding: 20px 10px 20px 70px;
   border-left: 1px solid #796864;
   font-family: "Californian", serif;
 }
@@ -5609,6 +5656,7 @@ label.cbx {
 .orb-about-2 .orb-content .contact-details-wrapper li .contact-details-text {
   color: #796864;
   margin: 0;
+  font-size: 22px;
 }
 
 .orb-about-2 .orb-content .orb-about-frame {
@@ -5677,11 +5725,28 @@ label.cbx {
   color: #46302c;
 }
 
+.orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details {
+  font-style: italic;
+}
 .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text {
   font-size: 22px;
   line-height: 1.2;
   color: #796864;
-  margin-bottom: 20px;
+  margin: 0 0 15px;
+}
+.orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text-name {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.2;
+  color: #796864;
+  margin: 0;
+}
+.orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text-title {
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.2;
+  color: #796864;
+  margin: 0 0 30px;
 }
 
 .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .follow-us {
@@ -5696,10 +5761,6 @@ label.cbx {
 .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .Follow-us-link {
   display: flex;
   align-items: center;
-}
-
-.orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .Follow-us-link img {
-  height: 30px;
 }
 
 .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .Follow-us-link:hover img {
@@ -5770,13 +5831,53 @@ label.cbx {
 
 .client-wrapper .client-swiper .swiper-wrapper .client-frame {
   display: block;
-  width: 200px;
   pointer-events: none;
   cursor: auto;
 }
 
 .client-wrapper .client-swiper .swiper-wrapper .client-frame img {
-  height: 130px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 120px;
+  width: 100%;
+  display: inline-block;
+}
+
+.client-wrapper .client-swiper .swiper-wrapper {
+  align-items: center;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-one {
+  width: 130px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-two {
+  width: 185px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-three {
+  width: 217px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-four {
+  width: 109px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-five {
+  width: 200px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-six {
+  width: 250px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-seven {
+  width: 230px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-eight {
+  width: 210px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-nine {
+  width: 100px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-ten {
+  width: 200px;
+}
+.client-wrapper .client-swiper .swiper-wrapper .swiper-slide-eleven {
+  width: 140px;
 }
 
 @media (max-width: 1200px) {
@@ -5827,10 +5928,16 @@ label.cbx {
   .orb-about-2 .orb-content .orb-about-frame .orb-about-text {
     padding: 40px 0 0;
   }
-  .orb-about-2 .orb-content .orb-about-frame .orb-about-text h1 {
+  .orb-about-2 .orb-content .orb-about-frame .orb-about-text h1.about-suptitle {
     font-size: 24px;
     line-height: normal;
     margin-bottom: 20px;
+  }
+  .orb-about-2 .orb-content .orb-about-frame .orb-about-text h1.about-suptitle::before {
+    height: 30px;
+  }
+  .orb-about-2 .orb-content .orb-about-frame .orb-about-text h1.about-suptitle span {
+    line-height: 32px;
   }
   .orb-about-2 .orb-content .orb-about-frame .orb-about-text .orb-quote {
     position: relative;
@@ -5848,16 +5955,30 @@ label.cbx {
   .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text {
     font-size: 18px;
   }
+  .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text-name {
+    font-size: 18px;
+  }
+  .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text-title {
+    font-size: 16px;
+  }
+  .orb-about-2 .orb-content .contact-details-wrapper li .contact-details-text {
+    font-size: 18px;
+  }
   .orb-about-2 .orb-content .contact-details-wrapper {
     padding: 0;
   }
-  .orb-about-2 .orb-content .contact-details-wrapper .icon svg {
-    height: 20px;
+  .orb-about-2 .orb-content .contact-details-wrapper li .icon {
     width: 20px;
+    flex: 0 0 20px;
+  }
+  .orb-about-2 .orb-content .contact-details-wrapper li .icon svg {
+    height: 18px;
+    width: 18px;
   }
   .orb-about-2 .orb-content .contact-details-wrapper li {
     font-size: 18px;
     margin-bottom: 10px;
+    gap: 15px;
   }
   .orb-about-2 .orb-content .rb-object-frame {
     padding: 30px 0 0;

@@ -351,8 +351,8 @@ $(function () {
 
 	// ***************************/
 	var swiper = new Swiper('.client-swiper', {
-        slidesPerView: 8,
-        spaceBetween: 30,
+        slidesPerView: "auto",
+        spaceBetween: 80,
         speed: 3000,
         autoplay: true,
         autoplay: {
