@@ -1116,10 +1116,6 @@ ul li {
   box-shadow: 0 0 0 1px #FFF;
 }
 
-.video-play-button:hover .orb-arrow {
-  transform: translateX(10px);
-}
-
 @media (max-width: 768px) {
   .video-play-button {
     width: 145px;
@@ -4571,8 +4567,8 @@ label.cbx {
 .orb-blog-1 .orb-content .orb-blog-frame .orb-post-card {
   display: block;
   position: relative;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .orb-blog-1 .orb-content .orb-blog-frame .orb-post-card .orb-date {
@@ -4585,7 +4581,8 @@ label.cbx {
 }
 
 .orb-blog-1 .orb-content .orb-blog-frame .orb-post-card h3 {
-  font-size: 15px;
+  font-family: "Californian";
+  font-size: 18px;
   color: #d45a57;
   margin-right: 10px;
   position: relative;
@@ -4678,7 +4675,7 @@ label.cbx {
   margin-right: 20px;
 }
 .orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .section-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .content-head {
   color: #46302c;
@@ -4692,7 +4689,7 @@ label.cbx {
   font-style: italic;
   font-weight: 300;
   font-family: "Futura", sans-serif;
-  margin: 0 0 40px;
+  margin: 0 0 30px;
 }
 .orb-blog-1 .orb-content .orb-blog-frame.content-wrapper .orb-post-footer {
   text-align: right;
@@ -5021,14 +5018,16 @@ label.cbx {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.4s ease-in-out;
+  display: none;
 }
 
 .orb-blog-card:hover .orb-photo-frame .video-play-button {
   box-shadow: 0 0 0 1px #FFF;
 }
 
-.orb-blog-card:hover .orb-photo-frame .video-play-button .orb-arrow {
-  transform: translateX(10px);
+.orb-blog-card:hover .orb-photo-frame .video-play-button {
+  display: flex;
 }
 
 .orb-blog-card .orb-post-text {
@@ -5646,6 +5645,9 @@ label.cbx {
   gap: 20px;
   margin-bottom: 20px;
 }
+.orb-about-2 .orb-content .contact-details-wrapper li:last-of-type {
+  margin-bottom: 0;
+}
 
 .orb-about-2 .orb-content .contact-details-wrapper li .icon {
   width: 30px;
@@ -5732,14 +5734,14 @@ label.cbx {
   font-size: 22px;
   line-height: 1.2;
   color: #796864;
-  margin: 0 0 15px;
+  margin: 0 0 10px;
 }
 .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text-name {
   font-size: 22px;
   font-style: italic;
   line-height: 1.2;
   color: #796864;
-  margin: 0;
+  margin: 20px 0 0;
 }
 .orb-about-2 .orb-content .orb-about-frame .orb-about-text .about-details .about-details-text-title {
   font-size: 17px;
@@ -5753,7 +5755,7 @@ label.cbx {
   gap: 20px;
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.2;
   color: #796864;
 }
